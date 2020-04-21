@@ -12,6 +12,14 @@
 <body>
 
 	<h1>Users</h1>
-
+    
+    <ul>
+    	<li th:each="user : ${users}">
+    		ID: [[${user.id}]] <br>
+    		NAME: [[${user.name}]] <br>
+    		AGE: [[${user.age}]]
+    	</li>
+    </ul>
+    
 </body>
 </html>
