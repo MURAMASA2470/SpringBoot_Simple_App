@@ -7,10 +7,10 @@ package com.muramasa.simple.models;
  * @author muramasa2470
  *
  */
-public class user {
+public class User {
 
 	
-	public user() {
+	public User() {
 		
 	}
 
