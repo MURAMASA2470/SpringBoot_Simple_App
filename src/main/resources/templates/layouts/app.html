@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="webjars/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>
+<script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<header layout:fragment="header">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="/users">SpringBoot Simple App</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarText">
+		   	<!-- <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#">Home</a>
+		      </li>
+		    </ul> -->
+		    <span class="ml-auto">
+		      <a href="#">ログアウト(未実装)</a>
+		    </span>
+		  </div>
+		</nav>
+	</header>
+	
+	<div layout:fragment="contents" class="contents-wrapper">
+	  <!-- ここにメインコンテンツ -->
+	</div>
+	
+	<footer class="footer mt-auto py-3">
+	  <div class="container text-center">
+	    <span class="text-muted">Place sticky footer content here.</span>
+	  </div>
+	</footer>
+
+</body>
+</html>

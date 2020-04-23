@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/app}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-<script src="webjars/jquery/3.4.1/jquery.min.js"></script>
-<link rel="stylesheet" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>
-<script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </head>
 <body>
 
 	<h1>Users</h1>
-    
-    <ul>
-    	<li th:each="user : ${users}">
-    		ID: [[${user.id}]] <br>
-    		NAME: [[${user.name}]] <br>
-    		AGE: [[${user.age}]]
-    	</li>
-    </ul>
+    <main layout:fragment="contents">
+	    <table class="table">
+	    	<thead>
+	    		<tr>
+	    			<th>ID</th>
+	    			<th>名前</th>
+	    			<th>年齢</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr th:each="user : ${users}">
+	    			<td>[[${user.id}]]</td>
+	    			<td>[[${user.name}]]</td>
+	    			<td>[[${user.age}]]</td>
+	    		</tr>
+	    	</tbody>
+	    </table>
+    </main>
     
 </body>
 </html>
