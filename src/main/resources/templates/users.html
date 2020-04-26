@@ -2,21 +2,18 @@
 <html
   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
   layout:decorate="~{layouts/app}">
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-
-</head>
+<head></head>
 <body>
 
-	<h1>Users</h1>
     <main layout:fragment="contents">
+		<h1>ユーザーリスト</h1>
 	    <table class="table">
 	    	<thead>
 	    		<tr>
 	    			<th>ID</th>
 	    			<th>名前</th>
 	    			<th>年齢</th>
+	    			<th>操作</th>
 	    		</tr>
 	    	</thead>
 	    	<tbody>
@@ -24,6 +21,10 @@
 	    			<td>[[${user.id}]]</td>
 	    			<td>[[${user.name}]]</td>
 	    			<td>[[${user.age}]]</td>
+	    			<td>
+	    				<button type="button" class="btn btn-secondary">詳細</button>
+	    				<button type="button" class="btn btn-danger">削除</button>
+	    			</td>
 	    		</tr>
 	    	</tbody>
 	    </table>
