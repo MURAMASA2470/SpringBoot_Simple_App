@@ -24,7 +24,6 @@ public class UserController {
 		List<User> list = users.findAll();
 		
 		model.addAttribute("users", list);
-		System.out.println(list);
 		
 		return "/users";
 	}
