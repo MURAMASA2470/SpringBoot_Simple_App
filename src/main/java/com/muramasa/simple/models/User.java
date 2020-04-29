@@ -3,30 +3,34 @@
  */
 package com.muramasa.simple.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * @author muramasa2470
  *
  */
+@Entity
+@Table(name="users")
 public class User {
 	
-	private Integer id;
+	// auto_increment
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
 	private String name;
 	private Integer age;
 	
-	
-	public User(Integer id, String name, Integer age) {
-		this.setId(id);
-		this.setName(name);
-		this.setAge(age);
-	}
 
-
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
