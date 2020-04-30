@@ -9,32 +9,32 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.muramasa.simple.models.User;
-import com.muramasa.simple.services.UserService;
+import com.muramasa.simple.models.Employee;
+import com.muramasa.simple.services.EmployeeService;
 
 @Controller
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/employees")
+public class EmployeeController {
 
 	@Autowired
-	private UserService users;
+	private EmployeeService employees;
 
 	@GetMapping("")
 	public String index(Model model) {
-		List<User> list = users.findAll();
+		List<Employee> list = employees.findAll();
 		
-		model.addAttribute("users", list);
+		model.addAttribute("employees", list);
 		
-		return "/users";
+		return "/employee/index";
 	}
 	
 	@GetMapping("/{id}")
 	public String detail(Model model, @PathVariable Long id) {
-		User user = users.findOne(id);
+		Employee employee = employees.findOne(id);
 		
-		model.addAttribute("user", user);
+		model.addAttribute("employee", employee);
 		
-		return "/users/detail";
+		return "/employee/detail";
 	}
 	
 }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/app}">
+<head></head>
+<body>
+
+    <main layout:fragment="contents">
+		<h1>従業員詳細</h1>
+	   	<ul>
+	   		<li>ID: [[${employee.id}]]</li>
+	   		<li>名前: [[${employee.name}]]</li>
+	   		<li>フリガナ: [[${employee.nameKana}]]</li>
+	   		<li>性別: [[${employee.sex}]]</li>
+	   	</ul>
+	   	
+	   	<a th:href="@{/employees}">一覧に戻る</a>
+    </main>
+    
+</body>
+</html>

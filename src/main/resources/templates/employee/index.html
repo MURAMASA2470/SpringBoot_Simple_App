@@ -6,23 +6,23 @@
 <body>
 
     <main layout:fragment="contents">
-		<h1>ユーザーリスト</h1>
+		<h1>従業員リスト</h1>
 	    <table class="table">
 	    	<thead>
 	    		<tr>
 	    			<th>ID</th>
 	    			<th>名前</th>
-	    			<th>年齢</th>
+	    			<th>電話番号</th>
 	    			<th>操作</th>
 	    		</tr>
 	    	</thead>
 	    	<tbody>
-	    		<tr th:each="user : ${users}">
-	    			<td>[[${user.id}]]</td>
-	    			<td>[[${user.name}]]</td>
-	    			<td>[[${user.age}]]</td>
+	    		<tr th:each="employee : ${employees}">
+	    			<td>[[${employee.id}]]</td>
+	    			<td>[[${employee.name}]]</td>
+	    			<td>[[${employee.tel}]]</td>
 	    			<td>
-	    				<button type="button" class="btn btn-secondary">詳細</button>
+	    				<a th:href="@{/employees/{id}(id=${employee.id})}"><button type="button" class="btn btn-secondary">詳細</button></a>
 	    				<button type="button" class="btn btn-danger">削除</button>
 	    			</td>
 	    		</tr>
