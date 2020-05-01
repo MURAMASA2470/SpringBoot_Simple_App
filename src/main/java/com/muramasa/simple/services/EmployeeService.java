@@ -14,12 +14,29 @@ public class EmployeeService {
 	@Autowired
 	private EmployeeRepository empRepos;
 
+	// 全件取得
 	public List<Employee> findAll() {
-		return empRepos.findAll();
+		return this.empRepos.findAll();
 	}
 	
+	// 1件取得
 	public Employee findOne(Long id) {
-		return empRepos.findById(id).orElseGet(null);
+		return this.empRepos.findById(id).orElseGet(null);
+	}
+	
+	// INSERT
+	public Employee save(Employee employee) {
+		return this.empRepos.save(employee);
+	}
+	
+	// DELETE
+	public void delete(Long id) {
+		this.empRepos.deleteById(id);
+	}
+	
+	// SELECT COUNT(*)
+	public Long count() {
+		return this.empRepos.count();
 	}
 
 }
